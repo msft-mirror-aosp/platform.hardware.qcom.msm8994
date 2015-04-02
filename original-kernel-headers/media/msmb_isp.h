@@ -103,6 +103,7 @@ enum msm_isp_stats_type {
 	MSM_ISP_STATS_BF_SCALE,  /* Bayer Focus scale */
 	MSM_ISP_STATS_HDR_BE,    /* HDR Bayer Exposure */
 	MSM_ISP_STATS_HDR_BHIST, /* HDR Bayer Hist */
+	MSM_ISP_STATS_AEC_BG,   /* AEC BG */
 	MSM_ISP_STATS_MAX    /* MAX */
 };
 
@@ -152,6 +153,18 @@ struct msm_vfe_fetch_engine_cfg {
 	uint32_t buf_stride;
 };
 
+/*
+ * Camif output general configuration
+ */
+struct msm_vfe_camif_subsample_cfg {
+	uint32_t irq_subsample_period;
+	uint32_t irq_subsample_pattern;
+	uint32_t sof_counter_step;
+};
+
+/*
+ * Camif frame and window configuration
+ */
 struct msm_vfe_camif_cfg {
 	uint32_t lines_per_frame;
 	uint32_t pixels_per_line;
@@ -162,6 +175,7 @@ struct msm_vfe_camif_cfg {
 	uint32_t epoch_line0;
 	uint32_t epoch_line1;
 	enum msm_vfe_camif_input camif_input;
+	struct msm_vfe_camif_subsample_cfg subsample_cfg;
 };
 
 struct msm_vfe_testgen_cfg {
@@ -471,7 +485,8 @@ enum msm_isp_event_idx {
 	ISP_CAMIF_ERROR     = 8,
 	ISP_BUF_DONE        = 9,
 	ISP_FE_RD_DONE      = 10,
-	ISP_EVENT_MAX       = 11
+	ISP_IOMMU_P_FAULT   = 11,
+	ISP_EVENT_MAX       = 12
 };
 
 #define ISP_EVENT_OFFSET          8
@@ -496,6 +511,7 @@ enum msm_isp_event_idx {
 #define ISP_EVENT_STATS_NOTIFY    (ISP_STATS_EVENT_BASE)
 #define ISP_EVENT_COMP_STATS_NOTIFY (ISP_EVENT_STATS_NOTIFY + MSM_ISP_STATS_MAX)
 #define ISP_EVENT_FE_READ_DONE    (ISP_EVENT_BASE + ISP_FE_RD_DONE)
+#define ISP_EVENT_IOMMU_P_FAULT   (ISP_EVENT_BASE + ISP_IOMMU_P_FAULT)
 #define ISP_EVENT_STREAM_UPDATE_DONE   (ISP_STREAM_EVENT_BASE)
 
 /* The msm_v4l2_event_data structure should match the
@@ -633,5 +649,8 @@ struct msm_isp_event_data {
 
 #define VIDIOC_MSM_ISP_FETCH_ENG_START \
 	_IOWR('V', BASE_VIDIOC_PRIVATE+20, struct msm_vfe_fetch_eng_start)
+
+#define VIDIOC_MSM_ISP_DEQUEUE_BUF \
+	_IOWR('V', BASE_VIDIOC_PRIVATE+21, struct msm_isp_qbuf_info)
 
 #endif /* __MSMB_ISP__ */
