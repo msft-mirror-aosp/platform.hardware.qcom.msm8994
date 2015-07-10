@@ -232,6 +232,7 @@ struct msm_sensor_id_info_t {
   unsigned short sensor_id;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   unsigned short sensor_id_mask;
+  unsigned short camera_id_pin;
 };
 struct msm_camera_sensor_slave_info {
   char sensor_name[32];
