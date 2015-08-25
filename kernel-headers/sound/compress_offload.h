@@ -37,7 +37,7 @@ struct snd_compr_params {
 struct snd_compr_tstamp {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  __u32 byte_offset;
- __u32 copied_total;
+ __u64 copied_total;
  __u32 pcm_frames;
  __u32 pcm_io_frames;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
