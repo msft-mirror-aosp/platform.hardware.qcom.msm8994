@@ -176,6 +176,7 @@ struct msm_vfe_camif_cfg {
 	uint32_t last_line;
 	uint32_t epoch_line0;
 	uint32_t epoch_line1;
+	uint32_t hbi_cnt;
 	enum msm_vfe_camif_input camif_input;
 	struct msm_vfe_camif_subsample_cfg subsample_cfg;
 };
@@ -490,7 +491,9 @@ enum msm_isp_event_idx {
 	ISP_FE_RD_DONE        = 8,
 	ISP_IOMMU_P_FAULT     = 9,
 	ISP_ERROR             = 10,
-	ISP_EVENT_MAX         = 11
+	ISP_PING_PONG_MISMATCH = 11,
+	ISP_REG_UPDATE_MISSING = 12,
+	ISP_EVENT_MAX         = 13
 };
 
 #define ISP_EVENT_OFFSET          8
@@ -515,6 +518,8 @@ enum msm_isp_event_idx {
 #define ISP_EVENT_COMP_STATS_NOTIFY (ISP_EVENT_STATS_NOTIFY + MSM_ISP_STATS_MAX)
 #define ISP_EVENT_FE_READ_DONE    (ISP_EVENT_BASE + ISP_FE_RD_DONE)
 #define ISP_EVENT_IOMMU_P_FAULT   (ISP_EVENT_BASE + ISP_IOMMU_P_FAULT)
+#define ISP_EVENT_PING_PONG_MISMATCH (ISP_EVENT_BASE + ISP_PING_PONG_MISMATCH)
+#define ISP_EVENT_REG_UPDATE_MISSING (ISP_EVENT_BASE + ISP_REG_UPDATE_MISSING)
 #define ISP_EVENT_STREAM_UPDATE_DONE   (ISP_STREAM_EVENT_BASE)
 
 /* The msm_v4l2_event_data structure should match the
