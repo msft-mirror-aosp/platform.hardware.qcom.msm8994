@@ -24,81 +24,81 @@
 #include <sound/compress_params.h>
 #define SNDRV_COMPRESS_VERSION SNDRV_PROTOCOL_VERSION(0, 1, 2)
 struct snd_compressed_buffer {
- __u32 fragment_size;
+  __u32 fragment_size;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u32 fragments;
+  __u32 fragments;
 };
 struct snd_compr_params {
- struct snd_compressed_buffer buffer;
+  struct snd_compressed_buffer buffer;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- struct snd_codec codec;
- __u8 no_wake_mode;
+  struct snd_codec codec;
+  __u8 no_wake_mode;
 };
 struct snd_compr_tstamp {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u32 byte_offset;
- __u32 copied_total;
- __u32 pcm_frames;
- __u32 pcm_io_frames;
+  __u32 byte_offset;
+  __u64 copied_total;
+  __u32 pcm_frames;
+  __u32 pcm_io_frames;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u32 sampling_rate;
- uint64_t timestamp;
+  __u32 sampling_rate;
+  uint64_t timestamp;
 };
 struct snd_compr_avail {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u64 avail;
- struct snd_compr_tstamp tstamp;
+  __u64 avail;
+  struct snd_compr_tstamp tstamp;
 } __attribute__((packed));
 enum snd_compr_direction {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- SND_COMPRESS_PLAYBACK = 0,
- SND_COMPRESS_CAPTURE
+  SND_COMPRESS_PLAYBACK = 0,
+  SND_COMPRESS_CAPTURE
 };
 struct snd_compr_caps {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u32 num_codecs;
- __u32 direction;
- __u32 min_fragment_size;
- __u32 max_fragment_size;
+  __u32 num_codecs;
+  __u32 direction;
+  __u32 min_fragment_size;
+  __u32 max_fragment_size;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u32 min_fragments;
- __u32 max_fragments;
- __u32 codecs[MAX_NUM_CODECS];
- __u32 reserved[11];
+  __u32 min_fragments;
+  __u32 max_fragments;
+  __u32 codecs[MAX_NUM_CODECS];
+  __u32 reserved[11];
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct snd_compr_codec_caps {
- __u32 codec;
- __u32 num_descriptors;
+  __u32 codec;
+  __u32 num_descriptors;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- struct snd_codec_desc descriptor[MAX_NUM_CODEC_DESCRIPTORS];
+  struct snd_codec_desc descriptor[MAX_NUM_CODEC_DESCRIPTORS];
 };
 struct snd_compr_audio_info {
- uint32_t frame_size;
+  uint32_t frame_size;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- uint32_t reserved[15];
+  uint32_t reserved[15];
 };
 enum {
- SNDRV_COMPRESS_ENCODER_PADDING = 1,
+  SNDRV_COMPRESS_ENCODER_PADDING = 1,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- SNDRV_COMPRESS_ENCODER_DELAY = 2,
- SNDRV_COMPRESS_MIN_BLK_SIZE = 3,
- SNDRV_COMPRESS_MAX_BLK_SIZE = 4,
+  SNDRV_COMPRESS_ENCODER_DELAY = 2,
+  SNDRV_COMPRESS_MIN_BLK_SIZE = 3,
+  SNDRV_COMPRESS_MAX_BLK_SIZE = 4,
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct snd_compr_metadata {
- __u32 key;
- __u32 value[8];
+  __u32 key;
+  __u32 value[8];
 };
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define SNDRV_COMPRESS_IOCTL_VERSION _IOR('C', 0x00, int)
 #define SNDRV_COMPRESS_GET_CAPS _IOWR('C', 0x10, struct snd_compr_caps)
-#define SNDRV_COMPRESS_GET_CODEC_CAPS _IOWR('C', 0x11,  struct snd_compr_codec_caps)
+#define SNDRV_COMPRESS_GET_CODEC_CAPS _IOWR('C', 0x11, struct snd_compr_codec_caps)
 #define SNDRV_COMPRESS_SET_PARAMS _IOW('C', 0x12, struct snd_compr_params)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define SNDRV_COMPRESS_GET_PARAMS _IOR('C', 0x13, struct snd_codec)
-#define SNDRV_COMPRESS_SET_METADATA _IOW('C', 0x14,  struct snd_compr_metadata)
-#define SNDRV_COMPRESS_GET_METADATA _IOWR('C', 0x15,  struct snd_compr_metadata)
+#define SNDRV_COMPRESS_SET_METADATA _IOW('C', 0x14, struct snd_compr_metadata)
+#define SNDRV_COMPRESS_GET_METADATA _IOWR('C', 0x15, struct snd_compr_metadata)
 #define SNDRV_COMPRESS_TSTAMP _IOR('C', 0x20, struct snd_compr_tstamp)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define SNDRV_COMPRESS_AVAIL _IOR('C', 0x21, struct snd_compr_avail)
