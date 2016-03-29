@@ -628,82 +628,83 @@ struct msm_isp_output_info {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   uint16_t stream_framedrop_mask;
   uint32_t stats_framedrop_mask;
+  uint32_t axi_updating_mask;
 };
-struct msm_isp_event_data {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+struct msm_isp_event_data {
   struct timeval timestamp;
   struct timeval mono_timestamp;
   uint32_t frame_id;
-  union {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  union {
     struct msm_isp_stats_event stats;
     struct msm_isp_buf_event buf_done;
     struct msm_isp_error_info error_info;
-    struct msm_isp_output_info output_info;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+    struct msm_isp_output_info output_info;
   } u;
 };
 #define V4L2_PIX_FMT_QBGGR8 v4l2_fourcc('Q', 'B', 'G', '8')
-#define V4L2_PIX_FMT_QGBRG8 v4l2_fourcc('Q', 'G', 'B', '8')
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define V4L2_PIX_FMT_QGBRG8 v4l2_fourcc('Q', 'G', 'B', '8')
 #define V4L2_PIX_FMT_QGRBG8 v4l2_fourcc('Q', 'G', 'R', '8')
 #define V4L2_PIX_FMT_QRGGB8 v4l2_fourcc('Q', 'R', 'G', '8')
 #define V4L2_PIX_FMT_QBGGR10 v4l2_fourcc('Q', 'B', 'G', '0')
-#define V4L2_PIX_FMT_QGBRG10 v4l2_fourcc('Q', 'G', 'B', '0')
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define V4L2_PIX_FMT_QGBRG10 v4l2_fourcc('Q', 'G', 'B', '0')
 #define V4L2_PIX_FMT_QGRBG10 v4l2_fourcc('Q', 'G', 'R', '0')
 #define V4L2_PIX_FMT_QRGGB10 v4l2_fourcc('Q', 'R', 'G', '0')
 #define V4L2_PIX_FMT_QBGGR12 v4l2_fourcc('Q', 'B', 'G', '2')
-#define V4L2_PIX_FMT_QGBRG12 v4l2_fourcc('Q', 'G', 'B', '2')
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define V4L2_PIX_FMT_QGBRG12 v4l2_fourcc('Q', 'G', 'B', '2')
 #define V4L2_PIX_FMT_QGRBG12 v4l2_fourcc('Q', 'G', 'R', '2')
 #define V4L2_PIX_FMT_QRGGB12 v4l2_fourcc('Q', 'R', 'G', '2')
 #define V4L2_PIX_FMT_QBGGR14 v4l2_fourcc('Q', 'B', 'G', '4')
-#define V4L2_PIX_FMT_QGBRG14 v4l2_fourcc('Q', 'G', 'B', '4')
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define V4L2_PIX_FMT_QGBRG14 v4l2_fourcc('Q', 'G', 'B', '4')
 #define V4L2_PIX_FMT_QGRBG14 v4l2_fourcc('Q', 'G', 'R', '4')
 #define V4L2_PIX_FMT_QRGGB14 v4l2_fourcc('Q', 'R', 'G', '4')
 #define V4L2_PIX_FMT_P16BGGR10 v4l2_fourcc('P', 'B', 'G', '0')
-#define V4L2_PIX_FMT_P16GBRG10 v4l2_fourcc('P', 'G', 'B', '0')
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define V4L2_PIX_FMT_P16GBRG10 v4l2_fourcc('P', 'G', 'B', '0')
 #define V4L2_PIX_FMT_P16GRBG10 v4l2_fourcc('P', 'G', 'R', '0')
 #define V4L2_PIX_FMT_P16RGGB10 v4l2_fourcc('P', 'R', 'G', '0')
 #define V4L2_PIX_FMT_NV14 v4l2_fourcc('N', 'V', '1', '4')
-#define V4L2_PIX_FMT_NV41 v4l2_fourcc('N', 'V', '4', '1')
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define V4L2_PIX_FMT_NV41 v4l2_fourcc('N', 'V', '4', '1')
 #define V4L2_PIX_FMT_META v4l2_fourcc('Q', 'M', 'E', 'T')
 #define V4L2_PIX_FMT_SBGGR14 v4l2_fourcc('B', 'G', '1', '4')
 #define V4L2_PIX_FMT_SGBRG14 v4l2_fourcc('G', 'B', '1', '4')
-#define V4L2_PIX_FMT_SGRBG14 v4l2_fourcc('B', 'A', '1', '4')
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define V4L2_PIX_FMT_SGRBG14 v4l2_fourcc('B', 'A', '1', '4')
 #define V4L2_PIX_FMT_SRGGB14 v4l2_fourcc('R', 'G', '1', '4')
 #define VIDIOC_MSM_VFE_REG_CFG _IOWR('V', BASE_VIDIOC_PRIVATE, struct msm_vfe_cfg_cmd2)
 #define VIDIOC_MSM_ISP_REQUEST_BUF _IOWR('V', BASE_VIDIOC_PRIVATE + 1, struct msm_isp_buf_request)
-#define VIDIOC_MSM_ISP_ENQUEUE_BUF _IOWR('V', BASE_VIDIOC_PRIVATE + 2, struct msm_isp_qbuf_info)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define VIDIOC_MSM_ISP_ENQUEUE_BUF _IOWR('V', BASE_VIDIOC_PRIVATE + 2, struct msm_isp_qbuf_info)
 #define VIDIOC_MSM_ISP_RELEASE_BUF _IOWR('V', BASE_VIDIOC_PRIVATE + 3, struct msm_isp_buf_request)
 #define VIDIOC_MSM_ISP_REQUEST_STREAM _IOWR('V', BASE_VIDIOC_PRIVATE + 4, struct msm_vfe_axi_stream_request_cmd)
 #define VIDIOC_MSM_ISP_CFG_STREAM _IOWR('V', BASE_VIDIOC_PRIVATE + 5, struct msm_vfe_axi_stream_cfg_cmd)
-#define VIDIOC_MSM_ISP_RELEASE_STREAM _IOWR('V', BASE_VIDIOC_PRIVATE + 6, struct msm_vfe_axi_stream_release_cmd)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define VIDIOC_MSM_ISP_RELEASE_STREAM _IOWR('V', BASE_VIDIOC_PRIVATE + 6, struct msm_vfe_axi_stream_release_cmd)
 #define VIDIOC_MSM_ISP_INPUT_CFG _IOWR('V', BASE_VIDIOC_PRIVATE + 7, struct msm_vfe_input_cfg)
 #define VIDIOC_MSM_ISP_SET_SRC_STATE _IOWR('V', BASE_VIDIOC_PRIVATE + 8, struct msm_vfe_axi_src_state)
 #define VIDIOC_MSM_ISP_REQUEST_STATS_STREAM _IOWR('V', BASE_VIDIOC_PRIVATE + 9, struct msm_vfe_stats_stream_request_cmd)
-#define VIDIOC_MSM_ISP_CFG_STATS_STREAM _IOWR('V', BASE_VIDIOC_PRIVATE + 10, struct msm_vfe_stats_stream_cfg_cmd)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define VIDIOC_MSM_ISP_CFG_STATS_STREAM _IOWR('V', BASE_VIDIOC_PRIVATE + 10, struct msm_vfe_stats_stream_cfg_cmd)
 #define VIDIOC_MSM_ISP_RELEASE_STATS_STREAM _IOWR('V', BASE_VIDIOC_PRIVATE + 11, struct msm_vfe_stats_stream_release_cmd)
 #define VIDIOC_MSM_ISP_REG_UPDATE_CMD _IOWR('V', BASE_VIDIOC_PRIVATE + 12, enum msm_vfe_input_src)
 #define VIDIOC_MSM_ISP_UPDATE_STREAM _IOWR('V', BASE_VIDIOC_PRIVATE + 13, struct msm_vfe_axi_stream_update_cmd)
-#define VIDIOC_MSM_VFE_REG_LIST_CFG _IOWR('V', BASE_VIDIOC_PRIVATE + 14, struct msm_vfe_cfg_cmd_list)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define VIDIOC_MSM_VFE_REG_LIST_CFG _IOWR('V', BASE_VIDIOC_PRIVATE + 14, struct msm_vfe_cfg_cmd_list)
 #define VIDIOC_MSM_ISP_SMMU_ATTACH _IOWR('V', BASE_VIDIOC_PRIVATE + 15, struct msm_vfe_smmu_attach_cmd)
 #define VIDIOC_MSM_ISP_UPDATE_STATS_STREAM _IOWR('V', BASE_VIDIOC_PRIVATE + 16, struct msm_vfe_axi_stream_update_cmd)
 #define VIDIOC_MSM_ISP_AXI_HALT _IOWR('V', BASE_VIDIOC_PRIVATE + 17, struct msm_vfe_axi_halt_cmd)
-#define VIDIOC_MSM_ISP_AXI_RESET _IOWR('V', BASE_VIDIOC_PRIVATE + 18, struct msm_vfe_axi_reset_cmd)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define VIDIOC_MSM_ISP_AXI_RESET _IOWR('V', BASE_VIDIOC_PRIVATE + 18, struct msm_vfe_axi_reset_cmd)
 #define VIDIOC_MSM_ISP_AXI_RESTART _IOWR('V', BASE_VIDIOC_PRIVATE + 19, struct msm_vfe_axi_restart_cmd)
 #define VIDIOC_MSM_ISP_FETCH_ENG_START _IOWR('V', BASE_VIDIOC_PRIVATE + 20, struct msm_vfe_fetch_eng_start)
 #define VIDIOC_MSM_ISP_DEQUEUE_BUF _IOWR('V', BASE_VIDIOC_PRIVATE + 21, struct msm_isp_qbuf_info)
-#endif
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#endif
 
